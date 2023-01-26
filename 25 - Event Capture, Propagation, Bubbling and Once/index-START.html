@@ -41,8 +41,22 @@
 </style>
 
 <button></button>
+
 <script>
+const divs = document.querySelectorAll('div');
+
+function logText(e) {
+  console.log(this.classList.value);
+  // e.stopPropagation();
+};
+
+divs.forEach(div => div.addEventListener('click', logText, {
+  capture: false,
+  // once: true // makes so it runs once and then won't run again until refreshed -- good for store checkouts
+}));
 
 </script>
+
 </body>
+
 </html>
